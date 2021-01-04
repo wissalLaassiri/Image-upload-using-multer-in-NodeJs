@@ -7,6 +7,7 @@ This API do a health check every 1 minute for some given URL. You can create an 
 ## About the project
 
 This Rest API is entirely made for handling uploaded files. The main goal here is resizing uploaded pictures and store them in three different folders : high resolution, medium resolution, low resolution.
+This Rest API is made also for handling users, and searching articles.
 
 ## How To Run
 
@@ -50,6 +51,12 @@ npm start
   - Method: **POST**
     - Description: Upload pictures and resizing them, create 3 folders, each one has a pic named with a crypted key.
     - Body : file, extension
+
+  **/search articles/**:
+
+  - Method: **GET**
+    - Description: Return articl's field.
+    - Body: article_city, id_theme,text1,text2,text3,text4,text5
 
 # Multer [![Build Status](https://travis-ci.org/expressjs/multer.svg?branch=master)](https://travis-ci.org/expressjs/multer) [![NPM version](https://badge.fury.io/js/multer.svg)](https://badge.fury.io/js/multer) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
