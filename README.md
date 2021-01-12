@@ -31,7 +31,7 @@ npm start
     - Description: Return a user data by id, or a list of all users.
     - Query String : id_user
 
-  - Method: **PATCH**
+  - Method: **PUT**
 
     - Description: Update the user's fields.
     - Body: user_name
