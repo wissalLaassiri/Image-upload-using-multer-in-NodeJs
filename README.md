@@ -21,92 +21,61 @@ npm start
 
 - **/users/** :
 
-  - Method: **POST** : localhost:3000/api/
+  - Method: **POST** localhost:3000/api/
 
     + Description: Create a new user.
     
     + Request
-        - user_name,uset_email, phone,password, code_type_user 
-        + Body :
-          {
-            "nom_user": "user10",
-            "email_user" : "user10@gmail.com",
-            "password": "user10",
-            "code_type_user":"ADMI",
-            "tel": "06112255"
-          }
+        +Body 
+           + user_name,uset_email, phone,password, code_type_user 
 
     + Response 
-        + Body
-          {
-            "message": "succeess user added",
-            "data": {
-              "fieldCount": 0,
-              "affectedRows": 1,
-              "insertId": 100,
-              "serverStatus": 2,
-              "warningCount": 0,
-              "message": "",
-              "protocol41": true,
-              "changedRows": 0
-            }
-          }
+        + Body  
+          {  
+            "message": "succeess user added"  
+          }  
 
 
-  - Method: **GET : localhost:3000/api/:id
+  - Method: **GET** localhost:3000/api/:id
 
     + Description: Return a user data by id, or a list of all users.
     + Params
         + id_user : Numeric id of the User to perform action
     + Response
-        + Body
-          {
-          "message": "Get user by id done",
-          "data": [
-            {
-              "id_user": 91,
-              "nom_user": "laassiri",
-              "prenom_user": "wissal",
-              "code_type_user": "ADMI",
-              "flag_actif": "O"
-            }
-          ]
-          }
+        + Body  
+          {  
+          "message": "Get user by id done",  
+          "data": [  
+            {  
+              "id_user": 91,  
+              "nom_user": "laassiri",  
+              "prenom_user": "wissal",  
+              "code_type_user": "ADMI",  
+              "flag_actif": "O"  
+            }  
+          ]  
+          }  
 
-  - Method: **PUT** : localhost:3000/api/
+  - Method: **PUT** localhost:3000/api/
 
     + Description: Update the user's fields.
     + Request
-      + Body
-        {
-          "id": 91,
-          "code_type_user":"ADMI"
-        }
+      + Body : id_user, code_type_user
     + Response
-      + Body
-        {
-        "message": "changes Done",
-        "data": {
-          "fieldCount": 0,
-          "affectedRows": 1,
-          "insertId": 0,
-          "serverStatus": 2,
-          "warningCount": 0,
-          "message": "(Rows matched: 1  Changed: 1  Warnings: 0",
-          "protocol41": true,
-          "changedRows": 1
-        }
-        }
+      + Body  
+        {  
+        "message": "changes Done"  
+        }  
 
-  - Method: **DELETE** : localhost:3000/api/:id
+  - Method: **DELETE** localhost:3000/api/:id
     + Description: Delete a given user.
     + Params
       + id_user : Numeric id of the User to perform action
     + Response
-      + Body
-        {
-        "message": "User deleted "
-        }
+      + Body  
+        {  
+        "message": "User deleted"  
+        }  
 
   **/tokens/** :
 
