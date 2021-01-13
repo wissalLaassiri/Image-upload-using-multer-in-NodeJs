@@ -21,24 +21,92 @@ npm start
 
 - **/users/** :
 
-  - Method: **POST**
+  - Method: **POST** : localhost:3000/api/
 
-    - Description: Create a new user.
-    - Body: user_name, user_email, phone, password.
+    + Description: Create a new user.
+    
+    + Request
+        - user_name,uset_email, phone,password, code_type_user 
+        + Body :
+          {
+            "nom_user": "user10",
+            "email_user" : "user10@gmail.com",
+            "password": "user10",
+            "code_type_user":"ADMI",
+            "tel": "06112255"
+          }
 
-  - Method: **GET**
+    + Response 
+        + Body
+          {
+            "message": "succeess user added",
+            "data": {
+              "fieldCount": 0,
+              "affectedRows": 1,
+              "insertId": 100,
+              "serverStatus": 2,
+              "warningCount": 0,
+              "message": "",
+              "protocol41": true,
+              "changedRows": 0
+            }
+          }
 
-    - Description: Return a user data by id, or a list of all users.
-    - Query String : id_user
 
-  - Method: **PUT**
+  - Method: **GET : localhost:3000/api/:id
 
-    - Description: Update the user's fields.
-    - Body: user_name
+    + Description: Return a user data by id, or a list of all users.
+    + Params
+        + id_user : Numeric id of the User to perform action
+    + Response
+        + Body
+          {
+          "message": "Get user by id done",
+          "data": [
+            {
+              "id_user": 91,
+              "nom_user": "laassiri",
+              "prenom_user": "wissal",
+              "code_type_user": "ADMI",
+              "flag_actif": "O"
+            }
+          ]
+          }
 
-  - Method: **DELETE**
-    - Description: Delete a given user.
-    - Query String: id_user
+  - Method: **PUT** : localhost:3000/api/
+
+    + Description: Update the user's fields.
+    + Request
+      + Body
+        {
+          "id": 91,
+          "code_type_user":"ADMI"
+        }
+    + Response
+      + Body
+        {
+        "message": "changes Done",
+        "data": {
+          "fieldCount": 0,
+          "affectedRows": 1,
+          "insertId": 0,
+          "serverStatus": 2,
+          "warningCount": 0,
+          "message": "(Rows matched: 1  Changed: 1  Warnings: 0",
+          "protocol41": true,
+          "changedRows": 1
+        }
+        }
+
+  - Method: **DELETE** : localhost:3000/api/:id
+    + Description: Delete a given user.
+    + Params
+      + id_user : Numeric id of the User to perform action
+    + Response
+      + Body
+        {
+        "message": "User deleted "
+        }
 
   **/tokens/** :
 
